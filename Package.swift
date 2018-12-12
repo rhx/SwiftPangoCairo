@@ -1,10 +1,18 @@
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
     name: "PangoCairo",
-    dependencies: [
-        .Package(url: "https://github.com/rhx/SwiftCairo.git", majorVersion: 2),
-        .Package(url: "https://github.com/rhx/SwiftPango.git", majorVersion: 2)
+    products: [
+        .library(name: "PangoCairo", targets: ["PangoCairo"]),
     ],
-    swiftLanguageVersions: [3]
+    dependencies: [
+        .package(url: "https://github.com/rhx/SwiftCairo.git", .branch("master")),
+        .package(url: "https://github.com/rhx/SwiftPango.git", .branch("master"))
+    ],
+    targets: [
+        .target(name: "PangoCairo", dependencies: ["Cairo", "Pango"]),
+        .testTarget(name: "PangoCairoTests", dependencies: ["PangoCairo"]),
+    ]
 )
