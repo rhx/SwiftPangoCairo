@@ -11,10 +11,10 @@ class PangoCairoTests: XCTestCase {
         let h = 240
         let argb32: cairo_format_t = .argb32
         let surface = imageSurfaceCreate(format: argb32, width: w, height: h)
-        guard let cp = cairo_create(surface.ptr) else { XCTFail() ; return }
+        guard let cp = cairo_create(surface._ptr) else { XCTFail() ; return }
         let cairo_context = cairo.Context(cp)
-        guard let ptr = createContext(cr: cairo_context) else { XCTFail() ; return }
-        let context = Pango.Context(ptr)
+        guard let _ptr = createContext(cr: cairo_context) else { XCTFail() ; return }
+        let context = Pango.Context(_ptr)
         XCTAssertNotNil(context.fontMap)
         XCTAssertNotNil(context.fontDescription)
         XCTAssertNotNil(context.gravityHint)
