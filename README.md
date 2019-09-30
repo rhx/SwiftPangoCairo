@@ -1,6 +1,6 @@
 # SwiftPangoCairo
 A Swift wrapper around pangocairo-1.x that is largely auto-generated from gobject-introspection.
-For up to date (auto-generated) reference documentation, see https://rhx.github.io/SwiftGObject/
+For up to date (auto-generated) reference documentation, see https://rhx.github.io/SwiftPangoCairo/
 
 
 ## Prerequisites
