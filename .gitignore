@@ -1,7 +1,8 @@
 .DS_Store
 /.build
+/.docs.old
 /Packages
 /*.xcodeproj
 Package.pins
 Package.resolved
-Sources/PangoCairo-1.0.swift
+Sources/PangoCairo/*-*.swift

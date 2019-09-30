@@ -1,0 +1,47 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftPangoCairo/Sources/PangoCairo/PangoCairo-1.0.swift",
+      "line": 79,
+      "symbol": "PangoCairoFcFontMap",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftPangoCairo/Sources/PangoCairo/PangoCairo-1.0.swift",
+      "line": 80,
+      "symbol": "PangoCairoCoreTextFont",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftPangoCairo/Sources/PangoCairo/PangoCairo-1.0.swift",
+      "line": 81,
+      "symbol": "PangoCairoCoreTextFontClass",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftPangoCairo/Sources/PangoCairo/PangoCairo-1.0.swift",
+      "line": 82,
+      "symbol": "PangoCairoCoreTextFontMap",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftPangoCairo/Sources/PangoCairo/PangoCairo-1.0.swift",
+      "line": 516,
+      "symbol": "FontSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftPangoCairo/Sources/PangoCairo/PangoCairo-1.0.swift",
+      "line": 801,
+      "symbol": "FontMapSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftPangoCairo"
+}
