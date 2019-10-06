@@ -85,14 +85,14 @@ public typealias PangoCairoCoreTextFontMap = _PangoCairoCoreTextFontMap
 
 
 
-
-
 /// Function type for rendering attributes of type `PANGO_ATTR_SHAPE`
 /// with Pango's Cairo renderer.
 public typealias ShapeRendererFunc = PangoCairoShapeRendererFunc
+
+
 /// Retrieves any font rendering options previously set with
-/// pango_cairo_context_set_font_options(). This function does not report options
-/// that are derived from the target surface by pango_cairo_update_context()
+/// `pango_cairo_context_set_font_options()`. This function does not report options
+/// that are derived from the target surface by `pango_cairo_update_context()`
 public func contextGetFontOptions(context: Pango.ContextProtocol) -> UnsafePointer<cairo_font_options_t>! {
     let rv = pango_cairo_context_get_font_options(cast(context.ptr))
     return cast(rv)
@@ -101,7 +101,7 @@ public func contextGetFontOptions(context: Pango.ContextProtocol) -> UnsafePoint
 
 
 
-/// Gets the resolution for the context. See pango_cairo_context_set_resolution()
+/// Gets the resolution for the context. See `pango_cairo_context_set_resolution()`
 public func contextGetResolution(context: Pango.ContextProtocol) -> CDouble {
     let rv = pango_cairo_context_get_resolution(cast(context.ptr))
     return rv
@@ -116,7 +116,7 @@ public func contextGetResolution(context: Pango.ContextProtocol) -> CDouble {
 /// 
 /// Retrieves callback function and associated user data for rendering
 /// attributes of type `PANGO_ATTR_SHAPE` as set by
-/// pango_cairo_context_set_shape_renderer(), if any.
+/// `pango_cairo_context_set_shape_renderer()`, if any.
 public func contextGetShapeRenderer(context: Pango.ContextProtocol, data: UnsafeMutablePointer<UnsafeMutableRawPointer>) -> PangoCairoShapeRendererFunc! {
     let rv = pango_cairo_context_get_shape_renderer(cast(context.ptr), cast(data))
     return rv
@@ -126,7 +126,7 @@ public func contextGetShapeRenderer(context: Pango.ContextProtocol, data: Unsafe
 
 
 /// Sets the font options used when rendering text with this context.
-/// These options override any options that pango_cairo_update_context()
+/// These options override any options that `pango_cairo_update_context()`
 /// derives from the target surface.
 public func contextSetFontOptions(context: Pango.ContextProtocol, options: FontOptionsProtocol) {
     pango_cairo_context_set_font_options(cast(context.ptr), cast(options.ptr))
@@ -161,12 +161,12 @@ public func contextSetShapeRenderer(context: Pango.ContextProtocol, func_: @esca
 
 /// Creates a context object set up to match the current transformation
 /// and target surface of the Cairo context.  This context can then be
-/// used to create a layout using pango_layout_new().
+/// used to create a layout using `pango_layout_new()`.
 /// 
 /// This function is a convenience function that creates a context using
 /// the default font map, then updates it to `cr`.  If you just need to
 /// create a layout for use with `cr` and do not need to access `PangoContext`
-/// directly, you can use pango_cairo_create_layout() instead.
+/// directly, you can use `pango_cairo_create_layout()` instead.
 public func createContext(cr: cairo.ContextProtocol) -> UnsafeMutablePointer<PangoContext>! {
     let rv = pango_cairo_create_context(cast(cr.ptr))
     return cast(rv)
@@ -178,9 +178,9 @@ public func createContext(cr: cairo.ContextProtocol) -> UnsafeMutablePointer<Pan
 /// Creates a layout object set up to match the current transformation
 /// and target surface of the Cairo context.  This layout can then be
 /// used for text measurement with functions like
-/// pango_layout_get_size() or drawing with functions like
-/// pango_cairo_show_layout(). If you change the transformation
-/// or target surface for `cr`, you need to call pango_cairo_update_layout()
+/// `pango_layout_get_size()` or drawing with functions like
+/// `pango_cairo_show_layout()`. If you change the transformation
+/// or target surface for `cr`, you need to call `pango_cairo_update_layout()`
 /// 
 /// This function is the most convenient way to use Cairo with Pango,
 /// however it is slightly inefficient since it creates a separate
@@ -215,7 +215,7 @@ public func errorUnderlinePath(cr: cairo.ContextProtocol, x: gdouble, y: gdouble
 /// `PangoCairoFontMap` interfaces on the returned object.
 /// 
 /// The default Cairo fontmap can be changed by using
-/// pango_cairo_font_map_set_default().  This can be used to
+/// `pango_cairo_font_map_set_default()`.  This can be used to
 /// change the Cairo font backend that the default fontmap
 /// uses for example.
 /// 
@@ -233,7 +233,7 @@ public func fontMapGetDefault() -> UnsafeMutablePointer<PangoFontMap>! {
 /// Creates a new `PangoCairoFontMap` object; a fontmap is used
 /// to cache information about available fonts, and holds
 /// certain global parameters such as the resolution.
-/// In most cases, you can use pango_cairo_font_map_get_default()
+/// In most cases, you can use `pango_cairo_font_map_get_default()`
 /// instead.
 /// 
 /// Note that the type of the returned object will depend
@@ -258,9 +258,9 @@ public func fontMapNew() -> UnsafeMutablePointer<PangoFontMap>! {
 /// Creates a new `PangoCairoFontMap` object of the type suitable
 /// to be used with cairo font backend of type `fonttype`.
 /// 
-/// In most cases one should simply use `pango_cairo_font_map_new`(),
+/// In most cases one should simply use `pango_cairo_font_map_new``()`,
 /// or in fact in most of those cases, just use
-/// `pango_cairo_font_map_get_default`().
+/// `pango_cairo_font_map_get_default``()`.
 public func fontMapNewForFontType(fonttype: cairo.FontType) -> UnsafeMutablePointer<PangoFontMap>! {
     let rv = pango_cairo_font_map_new_for_font_type(fonttype)
     return cast(rv)
@@ -318,7 +318,7 @@ public func showErrorUnderline(cr: cairo.ContextProtocol, x: gdouble, y: gdouble
 /// Draws the glyphs in `glyph_item` in the specified cairo context,
 /// embedding the text associated with the glyphs in the output if the
 /// output format supports it (PDF for example), otherwise it acts
-/// similar to pango_cairo_show_glyph_string().
+/// similar to `pango_cairo_show_glyph_string()`.
 /// 
 /// The origin of the glyphs (the left edge of the baseline) will
 /// be drawn at the current point of the cairo context.
@@ -369,7 +369,7 @@ public func showLayoutLine(cr: cairo.ContextProtocol, line: LayoutLineProtocol) 
 /// Updates a `PangoContext` previously created for use with Cairo to
 /// match the current transformation and target surface of a Cairo
 /// context. If any layouts have been created for the context,
-/// it's necessary to call pango_layout_context_changed() on those
+/// it's necessary to call `pango_layout_context_changed()` on those
 /// layouts.
 public func updateContext(cr: cairo.ContextProtocol, context: Pango.ContextProtocol) {
     pango_cairo_update_context(cast(cr.ptr), cast(context.ptr))
@@ -380,7 +380,7 @@ public func updateContext(cr: cairo.ContextProtocol, context: Pango.ContextProto
 
 
 /// Updates the private `PangoContext` of a `PangoLayout` created with
-/// pango_cairo_create_layout() to match the current transformation
+/// `pango_cairo_create_layout()` to match the current transformation
 /// and target surface of a Cairo context.
 public func updateLayout(cr: cairo.ContextProtocol, layout: LayoutProtocol) {
     pango_cairo_update_layout(cast(cr.ptr), cast(layout.ptr))
@@ -515,27 +515,26 @@ open class Font: Pango.Font, FontProtocol {
 
 public enum FontSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -577,7 +576,7 @@ public extension FontProtocol {
 
     /// Gets the `cairo_scaled_font_t` used by `font`.
     /// The scaled font can be referenced and kept using
-    /// cairo_scaled_font_reference().
+    /// `cairo_scaled_font_reference()`.
     func getScaledFont() -> UnsafeMutablePointer<cairo_scaled_font_t>! {
         let rv = pango_cairo_font_get_scaled_font(cast(font_ptr))
         return cast(rv)
@@ -600,11 +599,11 @@ public extension FontProtocol {
     }
     /// Gets the `cairo_scaled_font_t` used by `font`.
     /// The scaled font can be referenced and kept using
-    /// cairo_scaled_font_reference().
+    /// `cairo_scaled_font_reference()`.
     var scaledFont: UnsafeMutablePointer<cairo_scaled_font_t>! {
         /// Gets the `cairo_scaled_font_t` used by `font`.
         /// The scaled font can be referenced and kept using
-        /// cairo_scaled_font_reference().
+        /// `cairo_scaled_font_reference()`.
         get {
             let rv = pango_cairo_font_get_scaled_font(cast(font_ptr))
             return cast(rv)
@@ -693,7 +692,7 @@ public extension FontMapRef {
     /// `PangoCairoFontMap` interfaces on the returned object.
     /// 
     /// The default Cairo fontmap can be changed by using
-    /// pango_cairo_font_map_set_default().  This can be used to
+    /// `pango_cairo_font_map_set_default()`.  This can be used to
     /// change the Cairo font backend that the default fontmap
     /// uses for example.
     /// 
@@ -708,9 +707,9 @@ public extension FontMapRef {
     /// Creates a new `PangoCairoFontMap` object of the type suitable
     /// to be used with cairo font backend of type `fonttype`.
     /// 
-    /// In most cases one should simply use `pango_cairo_font_map_new`(),
+    /// In most cases one should simply use `pango_cairo_font_map_new``()`,
     /// or in fact in most of those cases, just use
-    /// `pango_cairo_font_map_get_default`().
+    /// `pango_cairo_font_map_get_default``()`.
     static func newFor(fontType fonttype: cairo.FontType) -> FontMapRef! {
         let rv = pango_cairo_font_map_new_for_font_type(fonttype)
         return rv.map { FontMapRef(cast($0)) }
@@ -771,7 +770,7 @@ open class FontMap: Pango.FontMap, FontMapProtocol {
     /// `PangoCairoFontMap` interfaces on the returned object.
     /// 
     /// The default Cairo fontmap can be changed by using
-    /// pango_cairo_font_map_set_default().  This can be used to
+    /// `pango_cairo_font_map_set_default()`.  This can be used to
     /// change the Cairo font backend that the default fontmap
     /// uses for example.
     /// 
@@ -786,9 +785,9 @@ open class FontMap: Pango.FontMap, FontMapProtocol {
     /// Creates a new `PangoCairoFontMap` object of the type suitable
     /// to be used with cairo font backend of type `fonttype`.
     /// 
-    /// In most cases one should simply use `pango_cairo_font_map_new`(),
+    /// In most cases one should simply use `pango_cairo_font_map_new``()`,
     /// or in fact in most of those cases, just use
-    /// `pango_cairo_font_map_get_default`().
+    /// `pango_cairo_font_map_get_default``()`.
     public static func newFor(fontType fonttype: cairo.FontType) -> FontMap! {
         let rv = pango_cairo_font_map_new_for_font_type(fonttype)
         return rv.map { FontMap(cast($0)) }
@@ -800,27 +799,26 @@ open class FontMap: Pango.FontMap, FontMapProtocol {
 
 public enum FontMapSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -875,7 +873,7 @@ public extension FontMapProtocol {
         return rv
     }
 
-    /// Gets the resolution for the fontmap. See pango_cairo_font_map_set_resolution()
+    /// Gets the resolution for the fontmap. See `pango_cairo_font_map_set_resolution()`
     func getResolution() -> CDouble {
         let rv = pango_cairo_font_map_get_resolution(cast(font_map_ptr))
         return rv
@@ -891,11 +889,11 @@ public extension FontMapProtocol {
     /// This function only changes the default fontmap for
     /// the current thread.   Default fontmaps of exisiting threads
     /// are not changed.  Default fontmaps of any new threads will
-    /// still be created using pango_cairo_font_map_new().
+    /// still be created using `pango_cairo_font_map_new()`.
     /// 
     /// A value of `nil` for `fontmap` will cause the current default
     /// font map to be released and a new default font
-    /// map to be created on demand, using pango_cairo_font_map_new().
+    /// map to be created on demand, using `pango_cairo_font_map_new()`.
     func setDefault() {
         pango_cairo_font_map_set_default(cast(font_map_ptr))
     
@@ -918,9 +916,9 @@ public extension FontMapProtocol {
         }
     }
 
-    /// Gets the resolution for the fontmap. See pango_cairo_font_map_set_resolution()
+    /// Gets the resolution for the fontmap. See `pango_cairo_font_map_set_resolution()`
     var resolution: CDouble {
-        /// Gets the resolution for the fontmap. See pango_cairo_font_map_set_resolution()
+        /// Gets the resolution for the fontmap. See `pango_cairo_font_map_set_resolution()`
         get {
             let rv = pango_cairo_font_map_get_resolution(cast(font_map_ptr))
             return rv
