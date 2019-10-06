@@ -221,8 +221,8 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Retrieves any font rendering options previously set with
-pango_cairo_context_set_font_options(). This function does not report options
-that are derived from the target surface by pango_cairo_update_context()</p>
+<code>pango_cairo_context_set_font_options()</code>. This function does not report options
+that are derived from the target surface by <code>pango_cairo_update_context()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -252,7 +252,7 @@ that are derived from the target surface by pango_cairo_update_context()</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the resolution for the context. See pango_cairo_context_set_resolution()</p>
+                        <p>Gets the resolution for the context. See <code>pango_cairo_context_set_resolution()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -288,7 +288,7 @@ details.</p>
 
 <p>Retrieves callback function and associated user data for rendering
 attributes of type <code>PANGO_ATTR_SHAPE</code> as set by
-pango_cairo_context_set_shape_renderer(), if any.</p>
+<code>pango_cairo_context_set_shape_renderer()</code>, if any.</p>
 
                       </div>
                       <div class="declaration">
@@ -319,7 +319,7 @@ pango_cairo_context_set_shape_renderer(), if any.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the font options used when rendering text with this context.
-These options override any options that pango_cairo_update_context()
+These options override any options that <code>pango_cairo_update_context()</code>
 derives from the target surface.</p>
 
                       </div>
@@ -417,12 +417,12 @@ details.</p>
                       <div class="abstract">
                         <p>Creates a context object set up to match the current transformation
 and target surface of the Cairo context.  This context can then be
-used to create a layout using pango_layout_new().</p>
+used to create a layout using <code>pango_layout_new()</code>.</p>
 
 <p>This function is a convenience function that creates a context using
 the default font map, then updates it to <code>cr</code>.  If you just need to
 create a layout for use with <code>cr</code> and do not need to access <code>PangoContext</code>
-directly, you can use pango_cairo_create_layout() instead.</p>
+directly, you can use <code>pango_cairo_create_layout()</code> instead.</p>
 
                       </div>
                       <div class="declaration">
@@ -455,9 +455,9 @@ directly, you can use pango_cairo_create_layout() instead.</p>
                         <p>Creates a layout object set up to match the current transformation
 and target surface of the Cairo context.  This layout can then be
 used for text measurement with functions like
-pango_layout_get_size() or drawing with functions like
-pango_cairo_show_layout(). If you change the transformation
-or target surface for <code>cr</code>, you need to call pango_cairo_update_layout()</p>
+<code>pango_layout_get_size()</code> or drawing with functions like
+<code>pango_cairo_show_layout()</code>. If you change the transformation
+or target surface for <code>cr</code>, you need to call <code>pango_cairo_update_layout()</code></p>
 
 <p>This function is the most convenient way to use Cairo with Pango,
 however it is slightly inefficient since it creates a separate
@@ -534,7 +534,7 @@ You generally should only use the <code>PangoFontMap</code> and
 <code>PangoCairoFontMap</code> interfaces on the returned object.</p>
 
 <p>The default Cairo fontmap can be changed by using
-pango_cairo_font_map_set_default().  This can be used to
+<code>pango_cairo_font_map_set_default()</code>.  This can be used to
 change the Cairo font backend that the default fontmap
 uses for example.</p>
 
@@ -573,7 +573,7 @@ PangoCairo can be used safely from multiple threads.</p>
                         <p>Creates a new <code>PangoCairoFontMap</code> object; a fontmap is used
 to cache information about available fonts, and holds
 certain global parameters such as the resolution.
-In most cases, you can use pango_cairo_font_map_get_default()
+In most cases, you can use <code>pango_cairo_font_map_get_default()</code>
 instead.</p>
 
 <p>Note that the type of the returned object will depend
@@ -619,9 +619,9 @@ are compiled in.</p>
                         <p>Creates a new <code>PangoCairoFontMap</code> object of the type suitable
 to be used with cairo font backend of type <code>fonttype</code>.</p>
 
-<p>In most cases one should simply use <code>pango_cairo_font_map_new</code>(),
+<p>In most cases one should simply use <code>pango_cairo_font_map_new</code><code>()</code>,
 or in fact in most of those cases, just use
-<code>pango_cairo_font_map_get_default</code>().</p>
+<code>pango_cairo_font_map_get_default</code><code>()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -784,7 +784,7 @@ original rectangle)</p>
                         <p>Draws the glyphs in <code>glyph_item</code> in the specified cairo context,
 embedding the text associated with the glyphs in the output if the
 output format supports it (PDF for example), otherwise it acts
-similar to pango_cairo_show_glyph_string().</p>
+similar to <code>pango_cairo_show_glyph_string()</code>.</p>
 
 <p>The origin of the glyphs (the left edge of the baseline) will
 be drawn at the current point of the cairo context.</p>
@@ -919,7 +919,7 @@ be drawn at the current point of the cairo context.</p>
                         <p>Updates a <code>PangoContext</code> previously created for use with Cairo to
 match the current transformation and target surface of a Cairo
 context. If any layouts have been created for the context,
-it&rsquo;s necessary to call pango_layout_context_changed() on those
+it&rsquo;s necessary to call <code>pango_layout_context_changed()</code> on those
 layouts.</p>
 
                       </div>
@@ -951,7 +951,7 @@ layouts.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Updates the private <code>PangoContext</code> of a <code>PangoLayout</code> created with
-pango_cairo_create_layout() to match the current transformation
+<code>pango_cairo_create_layout()</code> to match the current transformation
 and target surface of a Cairo context.</p>
 
                       </div>
@@ -977,7 +977,7 @@ and target surface of a Cairo context.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
