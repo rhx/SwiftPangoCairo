@@ -1,3 +1,33 @@
+
+func cast(_ param: UInt)   -> Int    {    Int(bitPattern: param) }
+func cast(_ param: Int)    -> UInt   {   UInt(bitPattern: param) }
+func cast(_ param: UInt16) -> Int16  {  Int16(bitPattern: param) }
+func cast(_ param: Int16)  -> UInt16 { UInt16(bitPattern: param) }
+func cast(_ param: UInt32) -> Int32  {  Int32(bitPattern: param) }
+func cast(_ param: Int32)  -> UInt32 { UInt32(bitPattern: param) }
+func cast(_ param: UInt64) -> Int64  {  Int64(bitPattern: param) }
+func cast(_ param: Int64)  -> UInt64 { UInt64(bitPattern: param) }
+func cast(_ param: Float)  -> Double { Double(param) }
+func cast(_ param: Float80) -> Double { Double(param) }
+func cast(_ param: Double) -> Float { Float(param) }
+func cast(_ param: Double) -> Float80 { Float80(param) }
+func cast<U: UnsignedInteger>(_ param: U) -> Int { Int(param) }
+func cast<S: SignedInteger>(_ param: S) -> Int { Int(param) }
+func cast<U: UnsignedInteger>(_ param: Int) -> U { U(param) }
+func cast<S: SignedInteger>(_ param: Int) -> S  { S(param) }
+func cast<I: BinaryInteger>(_ param: I) -> Int32 { Int32(param) }
+func cast<I: BinaryInteger>(_ param: I) -> UInt32 { UInt32(param) }
+func cast<I: BinaryInteger>(_ param: I) -> Bool { param != 0 }
+func cast<I: BinaryInteger>(_ param: Bool) -> I { param ? 1 : 0 }
+
+func cast(_ param: UnsafeRawPointer?) -> String! {
+    return param.map { String(cString: $0.assumingMemoryBound(to: CChar.self)) }
+}
+
+func cast(_ param: OpaquePointer?) -> String! {
+    return param.map { String(cString: UnsafePointer<CChar>($0)) }
+}
+
 func cast(_ param: UnsafeRawPointer) -> OpaquePointer! {
     return OpaquePointer(param)
 }
@@ -85,16 +115,17 @@ public typealias PangoCairoCoreTextFontMap = _PangoCairoCoreTextFontMap
 
 
 
+
+
+
 /// Function type for rendering attributes of type `PANGO_ATTR_SHAPE`
 /// with Pango's Cairo renderer.
 public typealias ShapeRendererFunc = PangoCairoShapeRendererFunc
-
-
 /// Retrieves any font rendering options previously set with
 /// `pango_cairo_context_set_font_options()`. This function does not report options
 /// that are derived from the target surface by `pango_cairo_update_context()`
 public func contextGetFontOptions(context: Pango.ContextProtocol) -> UnsafePointer<cairo_font_options_t>! {
-    let rv = pango_cairo_context_get_font_options(cast(context.ptr))
+    let rv: UnsafePointer<cairo_font_options_t>! = cast(pango_cairo_context_get_font_options(cast(context.ptr)))
     return cast(rv)
 }
 
@@ -102,9 +133,9 @@ public func contextGetFontOptions(context: Pango.ContextProtocol) -> UnsafePoint
 
 
 /// Gets the resolution for the context. See `pango_cairo_context_set_resolution()`
-public func contextGetResolution(context: Pango.ContextProtocol) -> CDouble {
-    let rv = pango_cairo_context_get_resolution(cast(context.ptr))
-    return rv
+public func contextGetResolution(context: Pango.ContextProtocol) -> Double {
+    let rv: Double = cast(pango_cairo_context_get_resolution(cast(context.ptr)))
+    return cast(rv)
 }
 
 
@@ -118,8 +149,8 @@ public func contextGetResolution(context: Pango.ContextProtocol) -> CDouble {
 /// attributes of type `PANGO_ATTR_SHAPE` as set by
 /// `pango_cairo_context_set_shape_renderer()`, if any.
 public func contextGetShapeRenderer(context: Pango.ContextProtocol, data: UnsafeMutablePointer<UnsafeMutableRawPointer>) -> PangoCairoShapeRendererFunc! {
-    let rv = pango_cairo_context_get_shape_renderer(cast(context.ptr), cast(data))
-    return rv
+    let rv: PangoCairoShapeRendererFunc! = cast(pango_cairo_context_get_shape_renderer(cast(context.ptr), cast(data)))
+    return cast(rv)
 }
 
 
@@ -168,7 +199,7 @@ public func contextSetShapeRenderer(context: Pango.ContextProtocol, func_: @esca
 /// create a layout for use with `cr` and do not need to access `PangoContext`
 /// directly, you can use `pango_cairo_create_layout()` instead.
 public func createContext(cr: cairo.ContextProtocol) -> UnsafeMutablePointer<PangoContext>! {
-    let rv = pango_cairo_create_context(cast(cr.ptr))
+    let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_cairo_create_context(cast(cr.ptr)))
     return cast(rv)
 }
 
@@ -187,7 +218,7 @@ public func createContext(cr: cairo.ContextProtocol) -> UnsafeMutablePointer<Pan
 /// `PangoContext` object for each layout. This might matter in an
 /// application that was laying out large amounts of text.
 public func createLayout(cr: cairo.ContextProtocol) -> UnsafeMutablePointer<PangoLayout>! {
-    let rv = pango_cairo_create_layout(cast(cr.ptr))
+    let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_cairo_create_layout(cast(cr.ptr)))
     return cast(rv)
 }
 
@@ -223,7 +254,7 @@ public func errorUnderlinePath(cr: cairo.ContextProtocol, x: gdouble, y: gdouble
 /// Each thread gets its own default fontmap.  In this way,
 /// PangoCairo can be used safely from multiple threads.
 public func fontMapGetDefault() -> UnsafeMutablePointer<PangoFontMap>! {
-    let rv = pango_cairo_font_map_get_default()
+    let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_cairo_font_map_get_default())
     return cast(rv)
 }
 
@@ -248,7 +279,7 @@ public func fontMapGetDefault() -> UnsafeMutablePointer<PangoFontMap>! {
 /// this is only useful for testing, when at least two backends
 /// are compiled in.
 public func fontMapNew() -> UnsafeMutablePointer<PangoFontMap>! {
-    let rv = pango_cairo_font_map_new()
+    let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_cairo_font_map_new())
     return cast(rv)
 }
 
@@ -262,7 +293,7 @@ public func fontMapNew() -> UnsafeMutablePointer<PangoFontMap>! {
 /// or in fact in most of those cases, just use
 /// `pango_cairo_font_map_get_default``()`.
 public func fontMapNewForFontType(fonttype: cairo.FontType) -> UnsafeMutablePointer<PangoFontMap>! {
-    let rv = pango_cairo_font_map_new_for_font_type(fonttype)
+    let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_cairo_font_map_new_for_font_type(fonttype))
     return cast(rv)
 }
 
@@ -400,7 +431,7 @@ public func updateLayout(cr: cairo.ContextProtocol, layout: LayoutProtocol) {
 /// use with Cairo. The actual type of the font will depend
 /// on the particular font technology Cairo was compiled to use.
 public protocol FontProtocol: Pango.FontProtocol {
-    /// Untyped pointer to the underlying `PangoCairoFont` instance.
+        /// Untyped pointer to the underlying `PangoCairoFont` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoCairoFont` instance.
@@ -415,7 +446,7 @@ public protocol FontProtocol: Pango.FontProtocol {
 /// use with Cairo. The actual type of the font will depend
 /// on the particular font technology Cairo was compiled to use.
 public struct FontRef: FontProtocol {
-    /// Untyped pointer to the underlying `PangoCairoFont` instance.
+        /// Untyped pointer to the underlying `PangoCairoFont` instance.
     /// For type-safe access, use the generated, typed pointer `font_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -470,7 +501,7 @@ public extension FontRef {
 /// use with Cairo. The actual type of the font will depend
 /// on the particular font technology Cairo was compiled to use.
 open class Font: Pango.Font, FontProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Font` instance.
     /// - Parameter op: pointer to the underlying object
@@ -552,7 +583,7 @@ open class Font: Pango.Font, FontProtocol {
 
 }
 
-// MARK: - no Font properties
+// MARK: no Font properties
 
 public enum FontSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -589,8 +620,8 @@ public extension FontProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: FontSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(font_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -611,6 +642,7 @@ public extension FontProtocol {
     }
 }
 
+// MARK: Font Interface: FontProtocol extension (methods and fields)
 public extension FontProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoCairoFont` instance.
     var font_ptr: UnsafeMutablePointer<PangoCairoFont> { return ptr.assumingMemoryBound(to: PangoCairoFont.self) }
@@ -619,7 +651,7 @@ public extension FontProtocol {
     /// The scaled font can be referenced and kept using
     /// `cairo_scaled_font_reference()`.
     func getScaledFont() -> UnsafeMutablePointer<cairo_scaled_font_t>! {
-        let rv = pango_cairo_font_get_scaled_font(cast(font_ptr))
+        let rv: UnsafeMutablePointer<cairo_scaled_font_t>! = cast(pango_cairo_font_get_scaled_font(cast(font_ptr)))
         return cast(rv)
     }
 
@@ -646,10 +678,12 @@ public extension FontProtocol {
         /// The scaled font can be referenced and kept using
         /// `cairo_scaled_font_reference()`.
         get {
-            let rv = pango_cairo_font_get_scaled_font(cast(font_ptr))
+            let rv: UnsafeMutablePointer<cairo_scaled_font_t>! = cast(pango_cairo_font_get_scaled_font(cast(font_ptr)))
             return cast(rv)
         }
     }
+
+
 }
 
 
@@ -665,7 +699,7 @@ public extension FontProtocol {
 /// use with Cairo. The actual type of the font map will depend
 /// on the particular font technology Cairo was compiled to use.
 public protocol FontMapProtocol: Pango.FontMapProtocol {
-    /// Untyped pointer to the underlying `PangoCairoFontMap` instance.
+        /// Untyped pointer to the underlying `PangoCairoFontMap` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoCairoFontMap` instance.
@@ -680,7 +714,7 @@ public protocol FontMapProtocol: Pango.FontMapProtocol {
 /// use with Cairo. The actual type of the font map will depend
 /// on the particular font technology Cairo was compiled to use.
 public struct FontMapRef: FontMapProtocol {
-    /// Untyped pointer to the underlying `PangoCairoFontMap` instance.
+        /// Untyped pointer to the underlying `PangoCairoFontMap` instance.
     /// For type-safe access, use the generated, typed pointer `font_map_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -741,7 +775,7 @@ public extension FontMapRef {
     /// Each thread gets its own default fontmap.  In this way,
     /// PangoCairo can be used safely from multiple threads.
     static func getDefault() -> FontMapRef! {
-        let rv = pango_cairo_font_map_get_default()
+        let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_cairo_font_map_get_default())
         return rv.map { FontMapRef(cast($0)) }
     }
 
@@ -752,7 +786,7 @@ public extension FontMapRef {
     /// or in fact in most of those cases, just use
     /// `pango_cairo_font_map_get_default``()`.
     static func newFor(fontType fonttype: cairo.FontType) -> FontMapRef! {
-        let rv = pango_cairo_font_map_new_for_font_type(fonttype)
+        let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_cairo_font_map_new_for_font_type(fonttype))
         return rv.map { FontMapRef(cast($0)) }
     }
 }
@@ -765,7 +799,7 @@ public extension FontMapRef {
 /// use with Cairo. The actual type of the font map will depend
 /// on the particular font technology Cairo was compiled to use.
 open class FontMap: Pango.FontMap, FontMapProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontMap` instance.
     /// - Parameter op: pointer to the underlying object
@@ -860,7 +894,7 @@ open class FontMap: Pango.FontMap, FontMapProtocol {
     /// Each thread gets its own default fontmap.  In this way,
     /// PangoCairo can be used safely from multiple threads.
     public static func getDefault() -> FontMap! {
-        let rv = pango_cairo_font_map_get_default()
+        let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_cairo_font_map_get_default())
         return rv.map { FontMap(cast($0)) }
     }
 
@@ -871,13 +905,13 @@ open class FontMap: Pango.FontMap, FontMapProtocol {
     /// or in fact in most of those cases, just use
     /// `pango_cairo_font_map_get_default``()`.
     public static func newFor(fontType fonttype: cairo.FontType) -> FontMap! {
-        let rv = pango_cairo_font_map_new_for_font_type(fonttype)
+        let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_cairo_font_map_new_for_font_type(fonttype))
         return rv.map { FontMap(cast($0)) }
     }
 
 }
 
-// MARK: - no FontMap properties
+// MARK: no FontMap properties
 
 public enum FontMapSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -914,8 +948,8 @@ public extension FontMapProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontMapSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: FontMapSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(font_map_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -936,6 +970,7 @@ public extension FontMapProtocol {
     }
 }
 
+// MARK: FontMap Interface: FontMapProtocol extension (methods and fields)
 public extension FontMapProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoCairoFontMap` instance.
     var font_map_ptr: UnsafeMutablePointer<PangoCairoFontMap> { return ptr.assumingMemoryBound(to: PangoCairoFontMap.self) }
@@ -945,20 +980,20 @@ public extension FontMapProtocol {
     /// **create_context is deprecated:**
     /// Use pango_font_map_create_context() instead.
     @available(*, deprecated) func createContext() -> UnsafeMutablePointer<PangoContext>! {
-        let rv = pango_cairo_font_map_create_context(cast(font_map_ptr))
+        let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_cairo_font_map_create_context(cast(font_map_ptr)))
         return cast(rv)
     }
 
     /// Gets the type of Cairo font backend that `fontmap` uses.
     func getFontType() -> cairo_font_type_t {
         let rv = pango_cairo_font_map_get_font_type(cast(font_map_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the resolution for the fontmap. See `pango_cairo_font_map_set_resolution()`
-    func getResolution() -> CDouble {
-        let rv = pango_cairo_font_map_get_resolution(cast(font_map_ptr))
-        return rv
+    func getResolution() -> Double {
+        let rv: Double = cast(pango_cairo_font_map_get_resolution(cast(font_map_ptr)))
+        return cast(rv)
     }
 
     /// Sets a default `PangoCairoFontMap` to use with Cairo.
@@ -994,25 +1029,27 @@ public extension FontMapProtocol {
         /// Gets the type of Cairo font backend that `fontmap` uses.
         get {
             let rv = pango_cairo_font_map_get_font_type(cast(font_map_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
     /// Gets the resolution for the fontmap. See `pango_cairo_font_map_set_resolution()`
-    var resolution: CDouble {
+    var resolution: Double {
         /// Gets the resolution for the fontmap. See `pango_cairo_font_map_set_resolution()`
         get {
-            let rv = pango_cairo_font_map_get_resolution(cast(font_map_ptr))
-            return rv
+            let rv: Double = cast(pango_cairo_font_map_get_resolution(cast(font_map_ptr)))
+            return cast(rv)
         }
         /// Sets the resolution for the fontmap. This is a scale factor between
         /// points specified in a `PangoFontDescription` and Cairo units. The
         /// default value is 96, meaning that a 10 point font will be 13
         /// units high. (10 * 96. / 72. = 13.3).
         nonmutating set {
-            pango_cairo_font_map_set_resolution(cast(font_map_ptr), newValue)
+            pango_cairo_font_map_set_resolution(cast(font_map_ptr), cast(newValue))
         }
     }
+
+
 }
 
 
