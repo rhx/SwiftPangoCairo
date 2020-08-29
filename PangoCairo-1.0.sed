@@ -1,4 +1,24 @@
-s/context: ContextProtocol/context: Pango.ContextProtocol/g
+s/FontOptions<ContextT: ContextProtocol/FontOptions<ContextT: Pango.ContextProtocol/
+s/font_options(context._ptr/font_options(context.context_ptr/
+s/Resolution<ContextT: ContextProtocol/Resolution<ContextT: Pango.ContextProtocol/
+s/resolution(context._ptr/resolution(context.context_ptr/
+s/Renderer<ContextT: ContextProtocol>/Renderer<ContextT: Pango.ContextProtocol>/
+s/renderer(context._ptr/renderer(context.context_ptr/
+s/ContextT: ContextProtocol>(context:/ContextT: Pango.ContextProtocol>(context:/
+s/updateContext<ContextT: ContextProtocol>(cr: ContextT, context: ContextT)/updateContext<C: cairo.ContextProtocol, P: Pango.ContextProtocol>(cr: C, context: P)/
+s/cr._ptr, context._ptr/cr._ptr, context.context_ptr/
+s/Layout<ContextT: ContextProtocol/Layout<ContextT: cairo.ContextProtocol/
+s/Path<ContextT: ContextProtocol/Path<ContextT: cairo.ContextProtocol/
+s/GlyphString<ContextT: ContextProtocol/GlyphString<ContextT: cairo.ContextProtocol/
+s/GlyphStringProtocol, ContextT: ContextProtocol/GlyphStringProtocol, ContextT: cairo.ContextProtocol/
+s/GlyphItem<ContextT: ContextProtocol/GlyphItem<ContextT: cairo.ContextProtocol/
+s/createContext<ContextT: ContextProtocol>(cr: ContextT) -> ContextRef/createContext<ContextT: cairo.ContextProtocol>(cr: ContextT) -> Pango.ContextRef/
+s/createContext() -> ContextRef/createContext() -> Pango.ContextRef/
+s/: ContextProtocol, GlyphStringT:/: cairo.ContextProtocol, GlyphStringT:/
+s/ContextT: ContextProtocol>(cr: ContextT/ContextT: cairo.ContextProtocol>(cr: ContextT/
+s/ContextRef(gconstpointer: gconstpointer(pango_cairo_create_context/Pango.ContextRef(gconstpointer: gconstpointer(pango_cairo_create_context/
+s/ContextRef(gconstpointer: gconstpointer(pango_cairo_font_map_create_context/Pango.ContextRef(gconstpointer: gconstpointer(pango_cairo_font_map_create_context/
+s/GlyphItemProtocol, ContextT: ContextProtocol/GlyphItemProtocol, ContextT: cairo.ContextProtocol/
 s/cr: ContextProtocol/cr: cairo.ContextProtocol/g
 s/FontProtocol: FontProtocol/FontProtocol: Pango.FontProtocol/
 s/Font: Font/Font: Pango.Font/
