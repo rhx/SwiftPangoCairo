@@ -1,15 +1,13 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.2
 
 import PackageDescription
 
 let package = Package(
     name: "PangoCairo",
-    products: [
-        .library(name: "PangoCairo", targets: ["PangoCairo"]),
-    ],
+    products: [ .library(name: "PangoCairo", targets: ["PangoCairo"]) ],
     dependencies: [
-        .package(url: "https://github.com/rhx/SwiftCairo.git", .branch("master")),
-        .package(url: "https://github.com/rhx/SwiftPango.git", .branch("master"))
+        .package(name: "Cairo", url: "https://github.com/rhx/SwiftCairo.git", .branch("master")),
+        .package(name: "Pango", url: "https://github.com/rhx/SwiftPango.git", .branch("master"))
     ],
     targets: [
         .target(name: "PangoCairo", dependencies: ["Cairo", "Pango"]),
