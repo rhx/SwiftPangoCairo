@@ -5,7 +5,7 @@ s/resolution(context._ptr/resolution(context.context_ptr/
 s/Renderer<ContextT: ContextProtocol>/Renderer<ContextT: Pango.ContextProtocol>/
 s/renderer(context._ptr/renderer(context.context_ptr/
 s/ContextT: ContextProtocol>(context:/ContextT: Pango.ContextProtocol>(context:/
-s/updateContext<ContextT: ContextProtocol>(cr: ContextT, context: ContextT)/updateContext<C: Cairo.ContextProtocol, P: Pango.ContextProtocol>(cr: C, context: P)/
+s/updateContext<ContextT: Cairo.ContextProtocol, ContextT:.*)/updateContext<C: Cairo.ContextProtocol, P: Pango.ContextProtocol>(cr: C, context: P)/
 s/cr._ptr, context._ptr/cr._ptr, context.context_ptr/
 s/Layout<ContextT: ContextProtocol/Layout<ContextT: Cairo.ContextProtocol/
 s/Path<ContextT: ContextProtocol/Path<ContextT: Cairo.ContextProtocol/
