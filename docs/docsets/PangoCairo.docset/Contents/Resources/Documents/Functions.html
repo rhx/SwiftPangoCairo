@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           PangoCairo 1.44.7 Docs
         </a>
-         (95% documented)
+         (94% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -91,6 +91,9 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo23contextGetShapeRenderer0C04dataySpySo6_cairoVGSg_SpySo01_a4AttrE0VGSgs5Int32VSvSgtXCSgx_SpyAOGSgt0A015ContextProtocolRzlF">contextGetShapeRenderer(context:data:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo21contextSetFontOptions0C07optionsyx_0B00eF3RefVSgt0A015ContextProtocolRzlF">contextSetFontOptions(context:options:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo21contextSetFontOptions0C07optionsyx_q_Sgt0A015ContextProtocolRz0B00efI0R_r0_lF">contextSetFontOptions(context:options:)</a>
               </li>
               <li class="nav-group-task">
@@ -109,16 +112,16 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo18errorUnderlinePath2cr1x1y5width6heightyx_S4dt0B015ContextProtocolRzlF">errorUnderlinePath(cr:x:y:width:height:)</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo17fontMapGetDefaultAA04FontD3RefVSgyF">fontMapGetDefault()</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo17fontMapGetDefault0A004FontD3RefVSgyF">fontMapGetDefault()</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo10fontMapNewAA04FontD3RefVSgyF">fontMapNew()</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo10fontMapNew0A004FontD3RefVSgyF">fontMapNew()</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo21fontMapNewForFontType8fonttypeAA0gD3RefVSgSo07_cairo_C5_typeV_tF">fontMapNewForFontType(fonttype:)</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo21fontMapNewForFontType8fonttype0A00gD3RefVSgSo07_cairo_C5_typeV_tF">fontMapNewForFontType(fonttype:)</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo15glyphStringPath2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRzAA04FontJ0R_0A005GlyphdJ0R0_r1_lF">glyphStringPath(cr:font:glyphs:)</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo15glyphStringPath2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRz0A004FontJ0R_AH05GlyphdJ0R0_r1_lF">glyphStringPath(cr:font:glyphs:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo14layoutLinePath2cr4lineyx_q_t0B015ContextProtocolRz0A006LayoutdI0R_r0_lF">layoutLinePath(cr:line:)</a>
@@ -133,7 +136,7 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo13showGlyphItem2cr4text05glyphE0yx_SPys4Int8VGSgq_t0B015ContextProtocolRz0A00deK0R_r0_lF">showGlyphItem(cr:text:glyphItem:)</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo15showGlyphString2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRzAA04FontJ0R_0A00deJ0R0_r1_lF">showGlyphString(cr:font:glyphs:)</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo15showGlyphString2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRz0A004FontJ0R_AH0deJ0R0_r1_lF">showGlyphString(cr:font:glyphs:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo10showLayout2cr6layoutyx_q_t0B015ContextProtocolRz0A00dH0R_r0_lF">showLayout(cr:layout:)</a>
@@ -206,6 +209,15 @@
         <section class="section">
           <div class="section-content">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/FontMap%20Interface:%20FontMapProtocol%20extension%20(methods%20and%20fields)"></a>
+                <a name="//apple_ref/swift/Section/FontMap Interface: FontMapProtocol extension (methods and fields)" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/FontMap%20Interface:%20FontMapProtocol%20extension%20(methods%20and%20fields)"></a>
+                  <h3 class="section-name"><p>FontMap Interface: FontMapProtocol extension (methods and fields)</p>
+</h3>
+                </div>
+              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
@@ -230,12 +242,12 @@ that are derived from the target surface by <code>pango_cairo_update_context()</
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">contextGetFontOptions</span><span class="o">&lt;</span><span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">FontOptionsRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt">ContextProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">contextGetFontOptions</span><span class="o">&lt;</span><span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Cairo</span><span class="o">.</span><span class="kt">FontOptionsRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt">ContextProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L48-L51">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L759-L762">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -266,7 +278,7 @@ that are derived from the target surface by <code>pango_cairo_update_context()</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L57-L60">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L768-L771">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -303,7 +315,40 @@ attributes of type <code>PANGO_ATTR_SHAPE</code> as set by
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L72-L75">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L783-L786">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10PangoCairo21contextSetFontOptions0C07optionsyx_0B00eF3RefVSgt0A015ContextProtocolRzlF"></a>
+                    <a name="//apple_ref/swift/Function/contextSetFontOptions(context:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10PangoCairo21contextSetFontOptions0C07optionsyx_0B00eF3RefVSgt0A015ContextProtocolRzlF">contextSetFontOptions(context:options:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the font options used when rendering text with this context.
+These options override any options that <code>pango_cairo_update_context()</code>
+derives from the target surface.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">contextSetFontOptions</span><span class="o">&lt;</span><span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">Cairo</span><span class="o">.</span><span class="kt">FontOptionsRef</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt">ContextProtocol</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L794-L797">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -331,12 +376,12 @@ derives from the target surface.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">contextSetFontOptions</span><span class="o">&lt;</span><span class="kt">ContextT</span><span class="p">,</span> <span class="kt">FontOptionsT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">FontOptionsT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt">ContextProtocol</span><span class="p">,</span> <span class="kt">FontOptionsT</span> <span class="p">:</span> <span class="kt">FontOptionsProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">contextSetFontOptions</span><span class="o">&lt;</span><span class="kt">ContextT</span><span class="p">,</span> <span class="kt">FontOptionsT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">FontOptionsT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt">ContextProtocol</span><span class="p">,</span> <span class="kt">FontOptionsT</span> <span class="p">:</span> <span class="kt">FontOptionsProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L83-L86">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L801-L804">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -370,7 +415,7 @@ units high. (10 * 96. / 72. = 13.3).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L95-L98">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L813-L816">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -403,7 +448,7 @@ details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L106-L109">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L824-L827">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -441,7 +486,7 @@ directly, you can use <code>pango_cairo_create_layout()</code> instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L122-L125">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L840-L843">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -477,12 +522,12 @@ application that was laying out large amounts of text.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">createLayout</span><span class="o">&lt;</span><span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cr</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">LayoutRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt">ContextProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">createLayout</span><span class="o">&lt;</span><span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cr</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt">LayoutRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt">ContextProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L141-L144">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L859-L862">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -517,7 +562,7 @@ in the original rectangle)</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L154-L157">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L872-L875">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -525,9 +570,9 @@ in the original rectangle)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10PangoCairo17fontMapGetDefaultAA04FontD3RefVSgyF"></a>
+                    <a name="/s:10PangoCairo17fontMapGetDefault0A004FontD3RefVSgyF"></a>
                     <a name="//apple_ref/swift/Function/fontMapGetDefault()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10PangoCairo17fontMapGetDefaultAA04FontD3RefVSgyF">fontMapGetDefault()</a>
+                    <a class="token" href="#/s:10PangoCairo17fontMapGetDefault0A004FontD3RefVSgyF">fontMapGetDefault()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -557,12 +602,12 @@ PangoCairo can be used safely from multiple threads.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fontMapGetDefault</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/FontMapRef.html">FontMapRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fontMapGetDefault</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/FontMapRef.html">FontMapRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L177-L180">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L895-L898">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -570,9 +615,9 @@ PangoCairo can be used safely from multiple threads.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10PangoCairo10fontMapNewAA04FontD3RefVSgyF"></a>
+                    <a name="/s:10PangoCairo10fontMapNew0A004FontD3RefVSgyF"></a>
                     <a name="//apple_ref/swift/Function/fontMapNew()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10PangoCairo10fontMapNewAA04FontD3RefVSgyF">fontMapNew()</a>
+                    <a class="token" href="#/s:10PangoCairo10fontMapNew0A004FontD3RefVSgyF">fontMapNew()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -604,12 +649,12 @@ are compiled in.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fontMapNew</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/FontMapRef.html">FontMapRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fontMapNew</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/FontMapRef.html">FontMapRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L202-L205">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L920-L923">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -617,9 +662,9 @@ are compiled in.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10PangoCairo21fontMapNewForFontType8fonttypeAA0gD3RefVSgSo07_cairo_C5_typeV_tF"></a>
+                    <a name="/s:10PangoCairo21fontMapNewForFontType8fonttype0A00gD3RefVSgSo07_cairo_C5_typeV_tF"></a>
                     <a name="//apple_ref/swift/Function/fontMapNewForFontType(fonttype:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10PangoCairo21fontMapNewForFontType8fonttypeAA0gD3RefVSgSo07_cairo_C5_typeV_tF">fontMapNewForFontType(fonttype:)</a>
+                    <a class="token" href="#/s:10PangoCairo21fontMapNewForFontType8fonttype0A00gD3RefVSgSo07_cairo_C5_typeV_tF">fontMapNewForFontType(fonttype:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -640,12 +685,12 @@ or in fact in most of those cases, just use
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fontMapNewForFontType</span><span class="p">(</span><span class="nv">fonttype</span><span class="p">:</span> <span class="n">cairo_font_type_t</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/FontMapRef.html">FontMapRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fontMapNewForFontType</span><span class="p">(</span><span class="nv">fonttype</span><span class="p">:</span> <span class="n">cairo_font_type_t</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/FontMapRef.html">FontMapRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L216-L219">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L934-L937">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -653,9 +698,9 @@ or in fact in most of those cases, just use
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10PangoCairo15glyphStringPath2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRzAA04FontJ0R_0A005GlyphdJ0R0_r1_lF"></a>
+                    <a name="/s:10PangoCairo15glyphStringPath2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRz0A004FontJ0R_AH05GlyphdJ0R0_r1_lF"></a>
                     <a name="//apple_ref/swift/Function/glyphStringPath(cr:font:glyphs:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10PangoCairo15glyphStringPath2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRzAA04FontJ0R_0A005GlyphdJ0R0_r1_lF">glyphStringPath(cr:font:glyphs:)</a>
+                    <a class="token" href="#/s:10PangoCairo15glyphStringPath2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRz0A004FontJ0R_AH05GlyphdJ0R0_r1_lF">glyphStringPath(cr:font:glyphs:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -678,7 +723,7 @@ will be at the current point of the cairo context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L227-L230">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L945-L948">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -711,7 +756,7 @@ of the line) will be at the current point of the cairo context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L238-L241">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L956-L959">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -744,7 +789,7 @@ will be at the current point of the cairo context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L249-L252">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L967-L970">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -779,7 +824,7 @@ original rectangle)</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L262-L265">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L980-L983">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -814,12 +859,12 @@ indexed by <literal><code>glyph_item</code>-&gt;item-&gt;offset</literal>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">showGlyphItem</span><span class="o">&lt;</span><span class="kt">ContextT</span><span class="p">,</span> <span class="kt">GlyphItemT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cr</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">glyphItem</span> <span class="nv">glyph_item</span><span class="p">:</span> <span class="kt">GlyphItemT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt">ContextProtocol</span><span class="p">,</span> <span class="kt">GlyphItemT</span> <span class="p">:</span> <span class="kt">GlyphItemProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">showGlyphItem</span><span class="o">&lt;</span><span class="kt">ContextT</span><span class="p">,</span> <span class="kt">GlyphItemT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cr</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">glyphItem</span><span class="p">:</span> <span class="kt">GlyphItemT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt">ContextProtocol</span><span class="p">,</span> <span class="kt">GlyphItemT</span> <span class="p">:</span> <span class="kt">GlyphItemProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L280-L283">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L998-L1001">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -827,9 +872,9 @@ indexed by <literal><code>glyph_item</code>-&gt;item-&gt;offset</literal>.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10PangoCairo15showGlyphString2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRzAA04FontJ0R_0A00deJ0R0_r1_lF"></a>
+                    <a name="/s:10PangoCairo15showGlyphString2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRz0A004FontJ0R_AH0deJ0R0_r1_lF"></a>
                     <a name="//apple_ref/swift/Function/showGlyphString(cr:font:glyphs:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10PangoCairo15showGlyphString2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRzAA04FontJ0R_0A00deJ0R0_r1_lF">showGlyphString(cr:font:glyphs:)</a>
+                    <a class="token" href="#/s:10PangoCairo15showGlyphString2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRz0A004FontJ0R_AH0deJ0R0_r1_lF">showGlyphString(cr:font:glyphs:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -852,7 +897,7 @@ be drawn at the current point of the cairo context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L291-L294">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L1009-L1012">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -885,7 +930,7 @@ at the current point of the cairo context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L302-L305">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L1020-L1023">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -918,7 +963,7 @@ be drawn at the current point of the cairo context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L313-L316">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L1031-L1034">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -953,7 +998,7 @@ layouts.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L326-L329">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L1044-L1047">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -986,7 +1031,7 @@ and target surface of a Cairo context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L337-L340">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L1055-L1058">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -999,7 +1044,7 @@ and target surface of a Cairo context.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
