@@ -22,7 +22,7 @@
         <a class="header-link" href="index.html">
           PangoCairo 1.44.7 Docs
         </a>
-         (95% documented)
+         (94% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -90,6 +90,9 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo23contextGetShapeRenderer0C04dataySpySo6_cairoVGSg_SpySo01_a4AttrE0VGSgs5Int32VSvSgtXCSgx_SpyAOGSgt0A015ContextProtocolRzlF">contextGetShapeRenderer(context:data:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo21contextSetFontOptions0C07optionsyx_0B00eF3RefVSgt0A015ContextProtocolRzlF">contextSetFontOptions(context:options:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo21contextSetFontOptions0C07optionsyx_q_Sgt0A015ContextProtocolRz0B00efI0R_r0_lF">contextSetFontOptions(context:options:)</a>
               </li>
               <li class="nav-group-task">
@@ -108,16 +111,16 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo18errorUnderlinePath2cr1x1y5width6heightyx_S4dt0B015ContextProtocolRzlF">errorUnderlinePath(cr:x:y:width:height:)</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo17fontMapGetDefaultAA04FontD3RefVSgyF">fontMapGetDefault()</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo17fontMapGetDefault0A004FontD3RefVSgyF">fontMapGetDefault()</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo10fontMapNewAA04FontD3RefVSgyF">fontMapNew()</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo10fontMapNew0A004FontD3RefVSgyF">fontMapNew()</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo21fontMapNewForFontType8fonttypeAA0gD3RefVSgSo07_cairo_C5_typeV_tF">fontMapNewForFontType(fonttype:)</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo21fontMapNewForFontType8fonttype0A00gD3RefVSgSo07_cairo_C5_typeV_tF">fontMapNewForFontType(fonttype:)</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo15glyphStringPath2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRzAA04FontJ0R_0A005GlyphdJ0R0_r1_lF">glyphStringPath(cr:font:glyphs:)</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo15glyphStringPath2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRz0A004FontJ0R_AH05GlyphdJ0R0_r1_lF">glyphStringPath(cr:font:glyphs:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo14layoutLinePath2cr4lineyx_q_t0B015ContextProtocolRz0A006LayoutdI0R_r0_lF">layoutLinePath(cr:line:)</a>
@@ -132,7 +135,7 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo13showGlyphItem2cr4text05glyphE0yx_SPys4Int8VGSgq_t0B015ContextProtocolRz0A00deK0R_r0_lF">showGlyphItem(cr:text:glyphItem:)</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo15showGlyphString2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRzAA04FontJ0R_0A00deJ0R0_r1_lF">showGlyphString(cr:font:glyphs:)</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo15showGlyphString2cr4font6glyphsyx_q_q0_t0B015ContextProtocolRz0A004FontJ0R_AH0deJ0R0_r1_lF">showGlyphString(cr:font:glyphs:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:10PangoCairo10showLayout2cr6layoutyx_q_t0B015ContextProtocolRz0A00dH0R_r0_lF">showLayout(cr:layout:)</a>
@@ -216,6 +219,7 @@ was compiled against libraries built with earlier versions of <code>gir2swift</c
     Requires Swift 5.2 or later
 
 </div><ul>
+<li>Uses the namespace referenced in the <code>gir</code> file</li>
 <li>Wrapper code is now <code>@inlinable</code> to enable the compiler to optimise away most of the wrappers</li>
 <li>Functions that take or return records now are templated instead of using the type-erased Protocol</li>
 <li><code>ErrorType</code> has been renamed <code>GLibError</code> to ensure it neither clashes with <code>Swift.Error</code> nor the <code>GLib.ErrorType</code>  scanner enum</li>
@@ -309,7 +313,7 @@ xcode-select --install
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
