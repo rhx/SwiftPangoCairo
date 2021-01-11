@@ -4,6 +4,10 @@ For up to date (auto-generated) reference documentation, see https://rhx.github.
 
 ## What is new?
 
+The current version introduces a new build system and signal generation code contributed by Mikoláš Stuchlík (see the **Building** Section below).
+
+### Other notable changes
+
 Version 11 introduces a new type system into `gir2swift`,
 to ensure it has a representation of the underlying types.
 This is necessary for Swift 5.3 onwards, which requires more stringent casts.
@@ -11,8 +15,6 @@ As a consequence, accessors can accept and return idiomatic Swift rather than
 underlying types or pointers.
 This means that a lot of the changes will be source-breaking for code that
 was compiled against libraries built with earlier versions of `gir2swift`.
-
-### Notable changes
 
  * Requires Swift 5.2 or later
  * Uses the namespace referenced in the `gir` file
@@ -50,14 +52,14 @@ These Swift wrappers have been tested with glib-2.56, 2.58, 2.60, 2.62, 2.64, an
 On Ubuntu 18.04 and 16.04, you can use the gtk that comes with the distribution.  Just install with the `apt` package manager:
 
 	sudo apt update
-	sudo apt install libpango1.0-dev gir1.2-pango-1.0 gobject-introspection libgirepository1.0-dev libxml2-dev
+	sudo apt install libpango1.0-dev gir1.2-pango-1.0 libcairo2-dev libcairo-gobject2 gobject-introspection libgirepository1.0-dev libxml2-dev
 
 If you prefer a newer version of gtk, you can also install it from the GNOME 3 Staging PPA (see https://launchpad.net/~gnome3-team/+archive/ubuntu/gnome3-staging), but be aware that this can be a bit dangerous (as this removes packages that can be vital, particularly if you use a GNOME-based desktop), so only do this if you know what you are doing:
 
 	sudo add-apt-repository ppa:gnome3-team/gnome3-staging
 	sudo apt update
 	sudo apt dist-upgrade
-	sudo apt install libpango1.0-dev gir1.2-pango-1.0 gobject-introspection libgirepository1.0-dev libxml2-dev
+	sudo apt install libpango1.0-dev gir1.2-pango-1.0 libcairo2-dev libcairo-gobject2 gobject-introspection libgirepository1.0-dev libxml2-dev
 
 ##### Fedora
 
@@ -72,14 +74,38 @@ On macOS, you can install glib and Pango using HomeBrew (for setup instructions,
 	brew update
 	brew install pango glib glib-networking gobject-introspection pkg-config
 
+## Usage
+
+Normally, you don't build this package directly (but for testing you can - see 'Building' below). Instead you need to embed SwiftPangoCairo into your own project using the [Swift Package Manager](https://swift.org/package-manager/).  After installing the prerequisites (see 'Prerequisites' below), add `SwiftPangoCairo` as a dependency to your `Package.swift` file, e.g.:
+
+```Swift
+// swift-tools-version:5.3
+
+import PackageDescription
+
+let package = Package(name: "MyPackage",
+    dependencies: [
+        .package(name: "PangoCairo", url: "https://github.com/rhx/SwiftPangoCairo.git", .branch("main")),
+    ],
+    targets: [.target(name: "MyPackage", dependencies: ["PangoCairo"])]
+)
+```
 
 ## Building
-Normally, you don't build this package directly, but you embed it into your own project (see 'Embedding' below).  However, you can build and test this module separately to ensure that everything works.  Make sure you have all the prerequisites installed (see above).  After that, you can simply clone this repository and build the command line executable (be patient, this will download all the required dependencies and take a while to compile) using
+
+Normally, you don't build this package directly, but you embed it into your own project (see 'Usage' above).  However, you can build and test this module separately to ensure that everything works.  Make sure you have all the prerequisites installed (see above).  After that, you can simply clone this repository and build the command line executable (be patient, this will download all the required dependencies and take a while to compile) using
 
 	git clone https://github.com/rhx/SwiftPangoCairo.git
 	cd SwiftPangoCairo
-	./build.sh
-	./test.sh
+    ./run-gir2swift.sh
+    swift build
+    swift test
+
+Please note that on macOS, due to a bug currently in the Swift Package Manager,
+you need to pass in the build flags manually, i.e. instead of `swift build` and `swift test` you can run
+
+    swift build `./run-gir2swift.sh flags -noUpdate`
+    swift test  `./run-gir2swift.sh flags -noUpdate`
 
 ### Xcode
 
@@ -100,6 +126,7 @@ Unfortunately, at this stage [jazzy](https://github.com/realm/jazzy) only works 
 
 
 ## Troubleshooting
+
 Here are some common errors you might encounter and how to fix them.
 
 ### Old Swift toolchain or Xcode
@@ -115,3 +142,9 @@ this probably means that your Swift toolchain is too old.  Make sure the latest 
 	sudo xcode-select -s /Applications/Xcode.app
 	xcode-select --install
 
+### Known Issues
+
+ * The current build system does not support directory paths with spaces (e.g. the `My Drive` directory used by Google Drive File Stream).
+ * BUILD_DIR is not supported in the current build system.
+ 
+As a workaround, you can use the old build scripts, e.g. `./build.sh` (instead of `run-gir2swift.sh` and `swift build`) to build a package.
