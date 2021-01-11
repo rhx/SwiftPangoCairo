@@ -21,6 +21,7 @@ jobs:
     steps:
       - name: Print Swift version to confirm
         run: swift --version
+
       - name: Fetch dependencies for general repository
         run: sudo apt-get install $UBUNTU_APT
 
@@ -48,7 +49,7 @@ jobs:
           swift test
           cd ..
 
-      - name: Remove unneeded files and archive artifacts
+      - name: Remove unneeded files and archive artefacts
         run: |
           cd SwiftPangoCairo
           swift package clean
