@@ -38,10 +38,10 @@ public typealias PangoCairoCoreTextFontMap = _PangoCairoCoreTextFontMap
 
 
 
-
 /// Function type for rendering attributes of type `PANGO_ATTR_SHAPE`
 /// with Pango's Cairo renderer.
 public typealias ShapeRendererFunc = PangoCairoShapeRendererFunc
+
 // MARK: - Font Interface
 
 /// The `FontProtocol` protocol exposes the methods and properties of an underlying `PangoCairoFont` instance.
@@ -68,7 +68,7 @@ public protocol FontProtocol: Pango.FontProtocol {
 /// `PangoCairoFont` is an interface exported by fonts for
 /// use with Cairo. The actual type of the font will depend
 /// on the particular font technology Cairo was compiled to use.
-public struct FontRef: FontProtocol {
+public struct FontRef: FontProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoCairoFont` instance.
     /// For type-safe access, use the generated, typed pointer `font_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -113,6 +113,9 @@ public extension FontRef {
     @inlinable init<T: FontProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: FontProtocol>(_ other: T) -> FontRef { FontRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
@@ -313,34 +316,7 @@ public enum FontSignalName: String, SignalNameProtocol {
 
 }
 
-public extension FontProtocol {
-    /// Connect a `FontSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: FontSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: Font has no signals
 // MARK: Font Interface: FontProtocol extension (methods and fields)
 public extension FontProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoCairoFont` instance.
@@ -397,7 +373,7 @@ public protocol FontMapProtocol: Pango.FontMapProtocol {
 /// `PangoCairoFontMap` is an interface exported by font maps for
 /// use with Cairo. The actual type of the font map will depend
 /// on the particular font technology Cairo was compiled to use.
-public struct FontMapRef: FontMapProtocol {
+public struct FontMapRef: FontMapProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoCairoFontMap` instance.
     /// For type-safe access, use the generated, typed pointer `font_map_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -442,6 +418,9 @@ public extension FontMapRef {
     @inlinable init<T: FontMapProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: FontMapProtocol>(_ other: T) -> FontMapRef { FontMapRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
@@ -642,34 +621,7 @@ public enum FontMapSignalName: String, SignalNameProtocol {
 
 }
 
-public extension FontMapProtocol {
-    /// Connect a `FontMapSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: FontMapSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: FontMap has no signals
 // MARK: FontMap Interface: FontMapProtocol extension (methods and fields)
 public extension FontMapProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoCairoFontMap` instance.
