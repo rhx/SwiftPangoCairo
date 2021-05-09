@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          PangoCairo 1.48.0 Docs
+          PangoCairo 1.48.4 Docs
         </a>
          (94% documented)
       </p>
@@ -214,11 +214,13 @@ For a concrete class that implements these methods and properties, see <code><a 
 Alternatively, use <code><a href="../Structs/FontMapRef.html">FontMapRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
 
 <p><code>PangoCairoFontMap</code> is an interface exported by font maps for
-use with Cairo. The actual type of the font map will depend
-on the particular font technology Cairo was compiled to use.</p>
+use with Cairo.</p>
+
+<p>The actual type of the font map will depend on the particular
+font technology Cairo was compiled to use.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L360-L367">Show on GitHub</a>
+                <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L370-L379">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -252,7 +254,7 @@ on the particular font technology Cairo was compiled to use.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L362">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L372">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -290,7 +292,37 @@ on the particular font technology Cairo was compiled to use.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L365">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L375">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10PangoCairo15FontMapProtocolP3rawxSv_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(raw:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10PangoCairo15FontMapProtocolP3rawxSv_tcfc">init(raw:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Required Initialiser for types conforming to <code>FontMapProtocol</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L378">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -341,7 +373,7 @@ Use pango_font_map_create_context() instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L634-L637">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L650-L653">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -375,7 +407,7 @@ Use pango_font_map_create_context() instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L640-L643">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L656-L659">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -396,7 +428,9 @@ Use pango_font_map_create_context() instead.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the resolution for the fontmap. See <code>pango_cairo_font_map_set_resolution()</code></p>
+                        <p>Gets the resolution for the fontmap.</p>
+
+<p>See [method<code>PangoCairo.FontMap.set_resolution</code>].</p>
 
                       </div>
                       <div class="declaration">
@@ -409,7 +443,7 @@ Use pango_font_map_create_context() instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L646-L649">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L664-L667">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -433,18 +467,18 @@ Use pango_font_map_create_context() instead.</p>
                         <p>Sets a default <code>PangoCairoFontMap</code> to use with Cairo.</p>
 
 <p>This can be used to change the Cairo font backend that the
-default fontmap uses for example.  The old default font map
+default fontmap uses for example. The old default font map
 is unreffed and the new font map referenced.</p>
 
 <p>Note that since Pango 1.32.6, the default fontmap is per-thread.
 This function only changes the default fontmap for
-the current thread.  Default fontmaps of existing threads
+the current thread. Default fontmaps of existing threads
 are not changed. Default fontmaps of any new threads will
-still be created using <code>pango_cairo_font_map_new()</code>.</p>
+still be created using [type_func<code>PangoCairo.FontMap.new</code>].</p>
 
 <p>A value of <code>nil</code> for <code>fontmap</code> will cause the current default
-font map to be released and a new default font
-map to be created on demand, using <code>pango_cairo_font_map_new()</code>.</p>
+font map to be released and a new default font map to be created
+on demand, using [type_func<code>PangoCairo.FontMap.new</code>].</p>
 
                       </div>
                       <div class="declaration">
@@ -457,7 +491,7 @@ map to be created on demand, using <code>pango_cairo_font_map_new()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L666-L669">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L684-L687">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -478,7 +512,9 @@ map to be created on demand, using <code>pango_cairo_font_map_new()</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the resolution for the fontmap. This is a scale factor between
+                        <p>Sets the resolution for the fontmap.</p>
+
+<p>This is a scale factor between
 points specified in a <code>PangoFontDescription</code> and Cairo units. The
 default value is 96, meaning that a 10 point font will be 13
 units high. (10 * 96. / 72. = 13.3).</p>
@@ -494,7 +530,7 @@ units high. (10 * 96. / 72. = 13.3).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L675-L678">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L695-L698">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -528,7 +564,7 @@ units high. (10 * 96. / 72. = 13.3).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L680-L686">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L700-L706">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -549,7 +585,9 @@ units high. (10 * 96. / 72. = 13.3).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the resolution for the fontmap. See <code>pango_cairo_font_map_set_resolution()</code></p>
+                        <p>Gets the resolution for the fontmap.</p>
+
+<p>See [method<code>PangoCairo.FontMap.set_resolution</code>].</p>
 
                       </div>
                       <div class="declaration">
@@ -562,7 +600,7 @@ units high. (10 * 96. / 72. = 13.3).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L689-L702">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPangoCairo/tree/generated/Sources/PangoCairo/PangoCairo-1.0.swift#L711-L728">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -575,8 +613,8 @@ units high. (10 * 96. / 72. = 13.3).</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-01-17)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-05-09)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
