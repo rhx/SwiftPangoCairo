@@ -33,14 +33,14 @@ public typealias PangoCairoCoreTextFontClass = _PangoCairoCoreTextFontClass
 public typealias PangoCairoCoreTextFontMap = _PangoCairoCoreTextFontMap
 
 
-
-
-
-
-
 /// Function type for rendering attributes of type `PANGO_ATTR_SHAPE`
 /// with Pango's Cairo renderer.
 public typealias ShapeRendererFunc = PangoCairoShapeRendererFunc
+
+
+
+
+
 
 // MARK: - Font Interface
 
@@ -50,8 +50,10 @@ public typealias ShapeRendererFunc = PangoCairoShapeRendererFunc
 /// Alternatively, use `FontRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 /// `PangoCairoFont` is an interface exported by fonts for
-/// use with Cairo. The actual type of the font will depend
-/// on the particular font technology Cairo was compiled to use.
+/// use with Cairo.
+/// 
+/// The actual type of the font will depend on the particular
+/// font technology Cairo was compiled to use.
 public protocol FontProtocol: Pango.FontProtocol {
         /// Untyped pointer to the underlying `PangoCairoFont` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -59,6 +61,8 @@ public protocol FontProtocol: Pango.FontProtocol {
     /// Typed pointer to the underlying `PangoCairoFont` instance.
     var font_ptr: UnsafeMutablePointer<PangoCairoFont>! { get }
 
+    /// Required Initialiser for types conforming to `FontProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontRef` type acts as a lightweight Swift reference to an underlying `PangoCairoFont` instance.
@@ -66,8 +70,10 @@ public protocol FontProtocol: Pango.FontProtocol {
 /// Use `FontRef` only as an `unowned` reference to an existing `PangoCairoFont` instance.
 ///
 /// `PangoCairoFont` is an interface exported by fonts for
-/// use with Cairo. The actual type of the font will depend
-/// on the particular font technology Cairo was compiled to use.
+/// use with Cairo.
+/// 
+/// The actual type of the font will depend on the particular
+/// font technology Cairo was compiled to use.
 public struct FontRef: FontProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoCairoFont` instance.
     /// For type-safe access, use the generated, typed pointer `font_ptr` property instead.
@@ -154,8 +160,10 @@ public extension FontRef {
 /// Use `Font` as a strong reference or owner of a `PangoCairoFont` instance.
 ///
 /// `PangoCairoFont` is an interface exported by fonts for
-/// use with Cairo. The actual type of the font will depend
-/// on the particular font technology Cairo was compiled to use.
+/// use with Cairo.
+/// 
+/// The actual type of the font will depend on the particular
+/// font technology Cairo was compiled to use.
 open class Font: Pango.Font, FontProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -256,14 +264,14 @@ open class Font: Pango.Font, FontProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -355,8 +363,10 @@ public extension FontProtocol {
 /// Alternatively, use `FontMapRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 /// `PangoCairoFontMap` is an interface exported by font maps for
-/// use with Cairo. The actual type of the font map will depend
-/// on the particular font technology Cairo was compiled to use.
+/// use with Cairo.
+/// 
+/// The actual type of the font map will depend on the particular
+/// font technology Cairo was compiled to use.
 public protocol FontMapProtocol: Pango.FontMapProtocol {
         /// Untyped pointer to the underlying `PangoCairoFontMap` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -364,6 +374,8 @@ public protocol FontMapProtocol: Pango.FontMapProtocol {
     /// Typed pointer to the underlying `PangoCairoFontMap` instance.
     var font_map_ptr: UnsafeMutablePointer<PangoCairoFontMap>! { get }
 
+    /// Required Initialiser for types conforming to `FontMapProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontMapRef` type acts as a lightweight Swift reference to an underlying `PangoCairoFontMap` instance.
@@ -371,8 +383,10 @@ public protocol FontMapProtocol: Pango.FontMapProtocol {
 /// Use `FontMapRef` only as an `unowned` reference to an existing `PangoCairoFontMap` instance.
 ///
 /// `PangoCairoFontMap` is an interface exported by font maps for
-/// use with Cairo. The actual type of the font map will depend
-/// on the particular font technology Cairo was compiled to use.
+/// use with Cairo.
+/// 
+/// The actual type of the font map will depend on the particular
+/// font technology Cairo was compiled to use.
 public struct FontMapRef: FontMapProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoCairoFontMap` instance.
     /// For type-safe access, use the generated, typed pointer `font_map_ptr` property instead.
@@ -459,8 +473,10 @@ public extension FontMapRef {
 /// Use `FontMap` as a strong reference or owner of a `PangoCairoFontMap` instance.
 ///
 /// `PangoCairoFontMap` is an interface exported by font maps for
-/// use with Cairo. The actual type of the font map will depend
-/// on the particular font technology Cairo was compiled to use.
+/// use with Cairo.
+/// 
+/// The actual type of the font map will depend on the particular
+/// font technology Cairo was compiled to use.
 open class FontMap: Pango.FontMap, FontMapProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -561,14 +577,14 @@ open class FontMap: Pango.FontMap, FontMapProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -642,7 +658,9 @@ public extension FontMapProtocol {
         return rv
     }
 
-    /// Gets the resolution for the fontmap. See `pango_cairo_font_map_set_resolution()`
+    /// Gets the resolution for the fontmap.
+    /// 
+    /// See [method`PangoCairo.FontMap.set_resolution`].
     @inlinable func getResolution() -> CDouble {
         let rv = pango_cairo_font_map_get_resolution(font_map_ptr)
         return rv
@@ -651,24 +669,26 @@ public extension FontMapProtocol {
     /// Sets a default `PangoCairoFontMap` to use with Cairo.
     /// 
     /// This can be used to change the Cairo font backend that the
-    /// default fontmap uses for example.  The old default font map
+    /// default fontmap uses for example. The old default font map
     /// is unreffed and the new font map referenced.
     /// 
     /// Note that since Pango 1.32.6, the default fontmap is per-thread.
     /// This function only changes the default fontmap for
-    /// the current thread.  Default fontmaps of existing threads
+    /// the current thread. Default fontmaps of existing threads
     /// are not changed. Default fontmaps of any new threads will
-    /// still be created using `pango_cairo_font_map_new()`.
+    /// still be created using [type_func`PangoCairo.FontMap.new`].
     /// 
     /// A value of `nil` for `fontmap` will cause the current default
-    /// font map to be released and a new default font
-    /// map to be created on demand, using `pango_cairo_font_map_new()`.
+    /// font map to be released and a new default font map to be created
+    /// on demand, using [type_func`PangoCairo.FontMap.new`].
     @inlinable func setDefault() {
         pango_cairo_font_map_set_default(font_map_ptr)
     
     }
 
-    /// Sets the resolution for the fontmap. This is a scale factor between
+    /// Sets the resolution for the fontmap.
+    /// 
+    /// This is a scale factor between
     /// points specified in a `PangoFontDescription` and Cairo units. The
     /// default value is 96, meaning that a 10 point font will be 13
     /// units high. (10 * 96. / 72. = 13.3).
@@ -685,14 +705,20 @@ public extension FontMapProtocol {
         }
     }
 
-    /// Gets the resolution for the fontmap. See `pango_cairo_font_map_set_resolution()`
+    /// Gets the resolution for the fontmap.
+    /// 
+    /// See [method`PangoCairo.FontMap.set_resolution`].
     @inlinable var resolution: CDouble {
-        /// Gets the resolution for the fontmap. See `pango_cairo_font_map_set_resolution()`
+        /// Gets the resolution for the fontmap.
+        /// 
+        /// See [method`PangoCairo.FontMap.set_resolution`].
         get {
             let rv = pango_cairo_font_map_get_resolution(font_map_ptr)
             return rv
         }
-        /// Sets the resolution for the fontmap. This is a scale factor between
+        /// Sets the resolution for the fontmap.
+        /// 
+        /// This is a scale factor between
         /// points specified in a `PangoFontDescription` and Cairo units. The
         /// default value is 96, meaning that a 10 point font will be 13
         /// units high. (10 * 96. / 72. = 13.3).
@@ -706,8 +732,11 @@ public extension FontMapProtocol {
 
 
 /// Retrieves any font rendering options previously set with
-/// `pango_cairo_context_set_font_options()`. This function does not report options
-/// that are derived from the target surface by `pango_cairo_update_context()`
+/// [func`PangoCairo.context_set_font_options`].
+/// 
+/// This function
+/// does not report options that are derived from the target
+/// surface by [func`update_context`].
 @inlinable public func contextGetFontOptions<ContextT: Pango.ContextProtocol>(context: ContextT) -> Cairo.FontOptionsRef! {
     guard let rv = Cairo.FontOptionsRef(pango_cairo_context_get_font_options(context.context_ptr)) else { return nil }
     return rv
@@ -716,7 +745,8 @@ public extension FontMapProtocol {
 
 
 
-/// Gets the resolution for the context. See `pango_cairo_context_set_resolution()`
+/// Gets the resolution for the context.
+/// See [func`PangoCairo.context_set_resolution`]
 @inlinable public func contextGetResolution<ContextT: Pango.ContextProtocol>(context: ContextT) -> CDouble {
     let rv = pango_cairo_context_get_resolution(context.context_ptr)
     return rv
@@ -726,12 +756,13 @@ public extension FontMapProtocol {
 
 
 /// Sets callback function for context to use for rendering attributes
-/// of type `PANGO_ATTR_SHAPE`.  See `PangoCairoShapeRendererFunc` for
-/// details.
+/// of type `PANGO_ATTR_SHAPE`.
+/// 
+/// See `PangoCairoShapeRendererFunc` for details.
 /// 
 /// Retrieves callback function and associated user data for rendering
 /// attributes of type `PANGO_ATTR_SHAPE` as set by
-/// `pango_cairo_context_set_shape_renderer()`, if any.
+/// [func`PangoCairo.context_set_shape_renderer`], if any.
 @inlinable public func contextGetShapeRenderer<ContextT: Pango.ContextProtocol>(context: ContextT, data: UnsafeMutablePointer<gpointer?>? = nil) -> PangoCairoShapeRendererFunc! {
     guard let rv = pango_cairo_context_get_shape_renderer(context.context_ptr, data) else { return nil }
     return rv
@@ -741,14 +772,16 @@ public extension FontMapProtocol {
 
 
 /// Sets the font options used when rendering text with this context.
-/// These options override any options that `pango_cairo_update_context()`
+/// 
+/// These options override any options that [func`update_context`]
 /// derives from the target surface.
 @inlinable public func contextSetFontOptions<ContextT: Pango.ContextProtocol>(context: ContextT, options: Cairo.FontOptionsRef? = nil) {
     pango_cairo_context_set_font_options(context.context_ptr, options?._ptr)
 
 }
 /// Sets the font options used when rendering text with this context.
-/// These options override any options that `pango_cairo_update_context()`
+/// 
+/// These options override any options that [func`update_context`]
 /// derives from the target surface.
 @inlinable public func contextSetFontOptions<ContextT: Pango.ContextProtocol, FontOptionsT: Cairo.FontOptionsProtocol>(context: ContextT, options: FontOptionsT?) {
     pango_cairo_context_set_font_options(context.context_ptr, options?._ptr)
@@ -758,7 +791,9 @@ public extension FontMapProtocol {
 
 
 
-/// Sets the resolution for the context. This is a scale factor between
+/// Sets the resolution for the context.
+/// 
+/// This is a scale factor between
 /// points specified in a `PangoFontDescription` and Cairo units. The
 /// default value is 96, meaning that a 10 point font will be 13
 /// units high. (10 * 96. / 72. = 13.3).
@@ -771,8 +806,9 @@ public extension FontMapProtocol {
 
 
 /// Sets callback function for context to use for rendering attributes
-/// of type `PANGO_ATTR_SHAPE`.  See `PangoCairoShapeRendererFunc` for
-/// details.
+/// of type `PANGO_ATTR_SHAPE`.
+/// 
+/// See `PangoCairoShapeRendererFunc` for details.
 @inlinable public func contextSetShapeRenderer<ContextT: Pango.ContextProtocol>(context: ContextT, `func`: PangoCairoShapeRendererFunc? = nil, data: gpointer! = nil, dnotify: GDestroyNotify?) {
     pango_cairo_context_set_shape_renderer(context.context_ptr, `func`, data, dnotify)
 
@@ -782,13 +818,15 @@ public extension FontMapProtocol {
 
 
 /// Creates a context object set up to match the current transformation
-/// and target surface of the Cairo context.  This context can then be
-/// used to create a layout using `pango_layout_new()`.
+/// and target surface of the Cairo context.
+/// 
+/// This context can then be
+/// used to create a layout using [ctor`Pango.Layout.new`].
 /// 
 /// This function is a convenience function that creates a context using
-/// the default font map, then updates it to `cr`.  If you just need to
+/// the default font map, then updates it to `cr`. If you just need to
 /// create a layout for use with `cr` and do not need to access `PangoContext`
-/// directly, you can use `pango_cairo_create_layout()` instead.
+/// directly, you can use [func`create_layout`] instead.
 @inlinable public func createContext<ContextT: Cairo.ContextProtocol>(cr: ContextT) -> Pango.ContextRef! {
     guard let rv = Pango.ContextRef(pango_cairo_create_context(cr._ptr)) else { return nil }
     return rv
@@ -798,11 +836,13 @@ public extension FontMapProtocol {
 
 
 /// Creates a layout object set up to match the current transformation
-/// and target surface of the Cairo context.  This layout can then be
+/// and target surface of the Cairo context.
+/// 
+/// This layout can then be
 /// used for text measurement with functions like
-/// `pango_layout_get_size()` or drawing with functions like
-/// `pango_cairo_show_layout()`. If you change the transformation
-/// or target surface for `cr`, you need to call `pango_cairo_update_layout()`
+/// [method`Pango.Layout.get_size`] or drawing with functions like
+/// [func`show_layout`]. If you change the transformation or target
+/// surface for `cr`, you need to call [func`update_layout`].
 /// 
 /// This function is the most convenient way to use Cairo with Pango,
 /// however it is slightly inefficient since it creates a separate
@@ -818,9 +858,11 @@ public extension FontMapProtocol {
 
 /// Add a squiggly line to the current path in the specified cairo context that
 /// approximately covers the given rectangle in the style of an underline used
-/// to indicate a spelling error.  (The width of the underline is rounded to an
+/// to indicate a spelling error.
+/// 
+/// The width of the underline is rounded to an
 /// integer number of up/down segments and the resulting rectangle is centered
-/// in the original rectangle)
+/// in the original rectangle.
 @inlinable public func errorUnderlinePath<ContextT: Cairo.ContextProtocol>(cr: ContextT, x: CDouble, y: CDouble, width: CDouble, height: CDouble) {
     pango_cairo_error_underline_path(cr._ptr, x, y, width, height)
 
@@ -831,19 +873,19 @@ public extension FontMapProtocol {
 
 /// Gets a default `PangoCairoFontMap` to use with Cairo.
 /// 
-/// Note that the type of the returned object will depend
-/// on the particular font backend Cairo was compiled to use;
-/// You generally should only use the `PangoFontMap` and
-/// `PangoCairoFontMap` interfaces on the returned object.
+/// Note that the type of the returned object will depend on the
+/// particular font backend Cairo was compiled to use; you generally
+/// should only use the `PangoFontMap` and `PangoCairoFontMap`
+/// interfaces on the returned object.
 /// 
 /// The default Cairo fontmap can be changed by using
-/// `pango_cairo_font_map_set_default()`.  This can be used to
-/// change the Cairo font backend that the default fontmap
-/// uses for example.
+/// [method`PangoCairo.FontMap.set_default`]. This can be used to
+/// change the Cairo font backend that the default fontmap uses
+/// for example.
 /// 
 /// Note that since Pango 1.32.6, the default fontmap is per-thread.
-/// Each thread gets its own default fontmap.  In this way,
-/// PangoCairo can be used safely from multiple threads.
+/// Each thread gets its own default fontmap. In this way, PangoCairo
+/// can be used safely from multiple threads.
 @inlinable public func fontMapGetDefault() -> Pango.FontMapRef! {
     guard let rv = Pango.FontMapRef(pango_cairo_font_map_get_default()) else { return nil }
     return rv
@@ -852,10 +894,11 @@ public extension FontMapProtocol {
 
 
 
-/// Creates a new `PangoCairoFontMap` object; a fontmap is used
-/// to cache information about available fonts, and holds
-/// certain global parameters such as the resolution.
-/// In most cases, you can use `pango_cairo_font_map_get_default()`
+/// Creates a new `PangoCairoFontMap` object.
+/// 
+/// A fontmap is used to cache information about available fonts,
+/// and holds certain global parameters such as the resolution.
+/// In most cases, you can use `func`PangoCairo.font_map_get_default`]
 /// instead.
 /// 
 /// Note that the type of the returned object will depend
@@ -864,7 +907,7 @@ public extension FontMapProtocol {
 /// `PangoCairoFontMap` interfaces on the returned object.
 /// 
 /// You can override the type of backend returned by using an
-/// environment variable `PANGOCAIRO_BACKEND`.  Supported types,
+/// environment variable `PANGOCAIRO_BACKEND`. Supported types,
 /// based on your build, are fc (fontconfig), win32, and coretext.
 /// If requested type is not available, NULL is returned. Ie.
 /// this is only useful for testing, when at least two backends
@@ -880,9 +923,8 @@ public extension FontMapProtocol {
 /// Creates a new `PangoCairoFontMap` object of the type suitable
 /// to be used with cairo font backend of type `fonttype`.
 /// 
-/// In most cases one should simply use `pango_cairo_font_map_new``()`,
-/// or in fact in most of those cases, just use
-/// `pango_cairo_font_map_get_default``()`.
+/// In most cases one should simply use [type_func`PangoCairo.FontMap.new`], or
+/// in fact in most of those cases, just use [func`PangoCairo.FontMap.get_default`].
 @inlinable public func fontMapNewForFontType(fonttype: cairo_font_type_t) -> Pango.FontMapRef! {
     guard let rv = Pango.FontMapRef(pango_cairo_font_map_new_for_font_type(fonttype)) else { return nil }
     return rv
@@ -892,7 +934,9 @@ public extension FontMapProtocol {
 
 
 /// Adds the glyphs in `glyphs` to the current path in the specified
-/// cairo context. The origin of the glyphs (the left edge of the baseline)
+/// cairo context.
+/// 
+/// The origin of the glyphs (the left edge of the baseline)
 /// will be at the current point of the cairo context.
 @inlinable public func glyphStringPath<ContextT: Cairo.ContextProtocol, FontT: Pango.FontProtocol, GlyphStringT: Pango.GlyphStringProtocol>(cr: ContextT, font: FontT, glyphs: GlyphStringT) {
     pango_cairo_glyph_string_path(cr._ptr, font.font_ptr, glyphs.glyph_string_ptr)
@@ -903,7 +947,9 @@ public extension FontMapProtocol {
 
 
 /// Adds the text in `PangoLayoutLine` to the current path in the
-/// specified cairo context.  The origin of the glyphs (the left edge
+/// specified cairo context.
+/// 
+/// The origin of the glyphs (the left edge
 /// of the line) will be at the current point of the cairo context.
 @inlinable public func layoutLinePath<ContextT: Cairo.ContextProtocol, LayoutLineT: Pango.LayoutLineProtocol>(cr: ContextT, line: LayoutLineT) {
     pango_cairo_layout_line_path(cr._ptr, line.layout_line_ptr)
@@ -914,7 +960,9 @@ public extension FontMapProtocol {
 
 
 /// Adds the text in a `PangoLayout` to the current path in the
-/// specified cairo context.  The top-left corner of the `PangoLayout`
+/// specified cairo context.
+/// 
+/// The top-left corner of the `PangoLayout`
 /// will be at the current point of the cairo context.
 @inlinable public func layoutPath<ContextT: Cairo.ContextProtocol, LayoutT: Pango.LayoutProtocol>(cr: ContextT, layout: LayoutT) {
     pango_cairo_layout_path(cr._ptr, layout.layout_ptr)
@@ -926,9 +974,11 @@ public extension FontMapProtocol {
 
 /// Draw a squiggly line in the specified cairo context that approximately
 /// covers the given rectangle in the style of an underline used to indicate a
-/// spelling error.  (The width of the underline is rounded to an integer
+/// spelling error.
+/// 
+/// The width of the underline is rounded to an integer
 /// number of up/down segments and the resulting rectangle is centered in the
-/// original rectangle)
+/// original rectangle.
 @inlinable public func showErrorUnderline<ContextT: Cairo.ContextProtocol>(cr: ContextT, x: CDouble, y: CDouble, width: CDouble, height: CDouble) {
     pango_cairo_show_error_underline(cr._ptr, x, y, width, height)
 
@@ -938,15 +988,16 @@ public extension FontMapProtocol {
 
 
 /// Draws the glyphs in `glyph_item` in the specified cairo context,
+/// 
 /// embedding the text associated with the glyphs in the output if the
 /// output format supports it (PDF for example), otherwise it acts
-/// similar to `pango_cairo_show_glyph_string()`.
+/// similar to [func`show_glyph_string`].
 /// 
 /// The origin of the glyphs (the left edge of the baseline) will
 /// be drawn at the current point of the cairo context.
 /// 
 /// Note that `text` is the start of the text for layout, which is then
-/// indexed by <literal>`glyph_item`->item->offset</literal>.
+/// indexed by `glyph_item-&gt;item-&gt;offset`.
 @inlinable public func showGlyphItem<ContextT: Cairo.ContextProtocol, GlyphItemT: Pango.GlyphItemProtocol>(cr: ContextT, text: UnsafePointer<CChar>!, glyphItem: GlyphItemT) {
     pango_cairo_show_glyph_item(cr._ptr, text, glyphItem.glyph_item_ptr)
 
@@ -956,6 +1007,7 @@ public extension FontMapProtocol {
 
 
 /// Draws the glyphs in `glyphs` in the specified cairo context.
+/// 
 /// The origin of the glyphs (the left edge of the baseline) will
 /// be drawn at the current point of the cairo context.
 @inlinable public func showGlyphString<ContextT: Cairo.ContextProtocol, FontT: Pango.FontProtocol, GlyphStringT: Pango.GlyphStringProtocol>(cr: ContextT, font: FontT, glyphs: GlyphStringT) {
@@ -967,6 +1019,7 @@ public extension FontMapProtocol {
 
 
 /// Draws a `PangoLayout` in the specified cairo context.
+/// 
 /// The top-left corner of the `PangoLayout` will be drawn
 /// at the current point of the cairo context.
 @inlinable public func showLayout<ContextT: Cairo.ContextProtocol, LayoutT: Pango.LayoutProtocol>(cr: ContextT, layout: LayoutT) {
@@ -978,6 +1031,7 @@ public extension FontMapProtocol {
 
 
 /// Draws a `PangoLayoutLine` in the specified cairo context.
+/// 
 /// The origin of the glyphs (the left edge of the line) will
 /// be drawn at the current point of the cairo context.
 @inlinable public func showLayoutLine<ContextT: Cairo.ContextProtocol, LayoutLineT: Pango.LayoutLineProtocol>(cr: ContextT, line: LayoutLineT) {
@@ -990,8 +1044,10 @@ public extension FontMapProtocol {
 
 /// Updates a `PangoContext` previously created for use with Cairo to
 /// match the current transformation and target surface of a Cairo
-/// context. If any layouts have been created for the context,
-/// it's necessary to call `pango_layout_context_changed()` on those
+/// context.
+/// 
+/// If any layouts have been created for the context,
+/// it's necessary to call [method`Pango.Layout.context_changed`] on those
 /// layouts.
 @inlinable public func updateContext<C: Cairo.ContextProtocol, P: Pango.ContextProtocol>(cr: C, context: P) {
     pango_cairo_update_context(cr._ptr, context.context_ptr)
@@ -1002,8 +1058,8 @@ public extension FontMapProtocol {
 
 
 /// Updates the private `PangoContext` of a `PangoLayout` created with
-/// `pango_cairo_create_layout()` to match the current transformation
-/// and target surface of a Cairo context.
+/// [func`create_layout`] to match the current transformation and target
+/// surface of a Cairo context.
 @inlinable public func updateLayout<ContextT: Cairo.ContextProtocol, LayoutT: Pango.LayoutProtocol>(cr: ContextT, layout: LayoutT) {
     pango_cairo_update_layout(cr._ptr, layout.layout_ptr)
 
