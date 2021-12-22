@@ -14,6 +14,7 @@ s/GlyphStringProtocol, ContextT: ContextProtocol/GlyphStringProtocol, ContextT: 
 s/GlyphItem<ContextT: ContextProtocol/GlyphItem<ContextT: Cairo.ContextProtocol/
 s/createContext<ContextT: ContextProtocol>(cr: ContextT) -> ContextRef/createContext<ContextT: Cairo.ContextProtocol>(cr: ContextT) -> Pango.ContextRef/
 s/createContext() -> ContextRef/createContext() -> Pango.ContextRef/
+s/createContext<ContextT: Cairo.ContextProtocol>(cr: ContextT) -> ContextRef/createContext<ContextT: Cairo.ContextProtocol>(cr: ContextT) -> Pango.ContextRef/
 s/: ContextProtocol, GlyphStringT:/: Cairo.ContextProtocol, GlyphStringT:/
 s/\(ContextT: \)\(ContextProtocol.*(cr: ContextT\)/\1Cairo.\2/
 s/ContextRef(gconstpointer: gconstpointer(pango_cairo_create_context/Pango.ContextRef(gconstpointer: gconstpointer(pango_cairo_create_context/
