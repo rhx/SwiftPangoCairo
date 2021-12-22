@@ -1,0 +1,3 @@
+version: 1
+gir-name: PangoCairo-1.0
+output-directory: Sources/PangoCairo
