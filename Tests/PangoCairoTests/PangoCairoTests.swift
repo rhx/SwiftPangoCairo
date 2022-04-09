@@ -24,10 +24,3 @@ class PangoCairoTests: XCTestCase {
     }
 
 }
-extension PangoCairoTests {
-    static var allTests : [(String, (PangoCairoTests) -> () throws -> Void)] {
-        return [
-            ("testPangoCairoContext", testPangoCairoContext),
-        ]
-    }
-}

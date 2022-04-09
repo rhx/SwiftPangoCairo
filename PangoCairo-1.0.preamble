@@ -5,9 +5,3 @@ import GLib
 import GLibObject
 import Pango
 import Cairo
-
-// Definitions missing from newer versions of PangoCairo, but still in the .gir
-public typealias PangoCairoFcFontMap = _PangoCairoFcFontMap
-public typealias PangoCairoCoreTextFont = _PangoCairoCoreTextFont
-public typealias PangoCairoCoreTextFontClass = _PangoCairoCoreTextFontClass
-public typealias PangoCairoCoreTextFontMap = _PangoCairoCoreTextFontMap
