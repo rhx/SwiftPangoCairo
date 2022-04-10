@@ -19,7 +19,6 @@ jobs:
   build-ubuntu-20_04-swift-latest:
     runs-on: ubuntu-20.04
     steps:
-    steps:
       - uses: actions/checkout@v2
       - uses: YOCKOW/Action-setup-swift@v1
         with:
