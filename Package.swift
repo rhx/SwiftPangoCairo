@@ -26,10 +26,14 @@ let package = Package(
                 .product(name: "Cairo", package: "SwiftCairo"),
                 .product(name: "Pango", package: "SwiftPango"),
             ],
-            swiftSettings: [.unsafeFlags(["-Xfrontend", "-serialize-debugging-options"], .when(configuration: .debug))],
+            swiftSettings: [
+                .unsafeFlags(["-suppress-warnings"], .when(configuration: .release)),
+                .unsafeFlags(["-suppress-warnings", "-Xfrontend", "-serialize-debugging-options"], .when(configuration: .debug)),
+            ],
             plugins: [
                 .plugin(name: "gir2swift-plugin", package: "gir2swift")
-            ]),
+            ]
+        ),
         .testTarget(name: "PangoCairoTests", dependencies: ["PangoCairo"]),
     ]
 )
