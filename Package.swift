@@ -8,7 +8,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/rhx/gir2swift.git",  branch: "development"),
         .package(url: "https://github.com/rhx/SwiftCairo.git", branch: "development"),
-        .package(url: "https://github.com/rhx/SwiftPango.git", branch: "development")
+        .package(url: "https://github.com/rhx/SwiftPango.git", branch: "development"),
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
     targets: [
         .systemLibrary(
