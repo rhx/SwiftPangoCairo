@@ -23,7 +23,6 @@ let package = Package(
             name: "PangoCairo",
             dependencies: [
                 "CPangoCairo",
-                .product(name: "gir2swift", package: "gir2swift"),
                 .product(name: "Cairo", package: "SwiftCairo"),
                 .product(name: "Pango", package: "SwiftPango"),
             ],
